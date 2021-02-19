@@ -1,0 +1,92 @@
+<ion-content>
+  <ion-header 
+    color="green" 
+    (click)="expandHeader()">
+
+    <ion-text>
+      <h6 class="ion-text-uppercase">
+        Eventos
+        <span *ngIf="expanded" >&#9650;</span>
+        <span *ngIf="!expanded">&#9660;</span>
+      </h6>
+      
+      <app-expandable expandHeight="150px" [expanded]= expanded>
+        <ion-label class="ion-text-wrap">
+          El calendario de actividades de Arbancón se ve salpicado por numerosos eventos a lo largo del año. 
+        </ion-label>  
+      </app-expandable>    
+    </ion-text>
+  </ion-header>
+
+  <ion-item lines="none">
+    <ion-label>
+      Próximos eventos:
+    </ion-label>
+  </ion-item>
+
+  <ion-list>
+    <ion-item 
+    lines="none"
+      *ngFor="let evento of eventos"
+    >
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+
+            <div (click)="openExternalUrl(evento.link)">
+              <ion-label>
+                <ion-text class="datum">
+                  <div>
+                    {{ evento.startTime | date:'fullDate'}}
+                    <span *ngIf="!evento.allDay">
+                      , {{ evento.startTime | date:'shortTime'}}
+                    </span> 
+                  </div>
+  
+                  <div *ngIf="evento.endTime > evento.startTime">
+                    {{ evento.endTime | date:'fullDate'}}
+                    <span *ngIf="!evento.allDay">
+                      , {{ evento.endTime | date:'shortTime'}}
+                    </span>  
+                  </div>
+  
+                </ion-text>
+              </ion-label>
+              
+              <ion-label class="ion-text-wrap">
+                <h2>{{ evento.title }}</h2>
+              </ion-label>
+  
+              <ion-label class="ion-text-wrap">
+                <ion-text color="text">
+                  {{ evento.descr }}
+                </ion-text>
+              </ion-label>
+            </div>
+          </ion-col>
+          <ion-col size="1" class="ion-no-padding">
+            <ion-button fill="clear"
+                        color="green"
+                        (click)="addToGCalender(evento)"
+              >
+              <ion-icon  name="today-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-justify-content-center">
+
+  <ion-button 
+    [routerLink]="['/calendario/']"
+    shape="round" 
+    fill="outline" 
+    size="small" 
+    color="light"
+  >
+    <ion-label>Calendario</ion-label>
+  </ion-button>
+</ion-footer>

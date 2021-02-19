@@ -1,0 +1,108 @@
+<ion-content>
+  <ion-row id="banner">
+    <ion-img src="../../../assets/images/home/turismo2.png">
+    </ion-img>
+  </ion-row>
+
+  <ion-row>
+
+    <ion-col class="side ion-padding">
+
+      <a href="https://www.google.com/maps?daddr=Arbanc%C3%B3n,+Spanien">
+        <ion-img src="../../../assets/images/home/gmaps-75x.png" class="top"></ion-img>
+      </a>
+
+      <ion-img src="../../../assets/images/home/PM-logo-transp-vert-500x.png" class="bottom"></ion-img>
+
+    </ion-col>
+
+    <ion-col size="7">
+      <ion-img src="../../../assets/images/home/botargatransp.png"></ion-img>
+    </ion-col>
+
+    <ion-col class="side ion-padding">
+      <div id="wetterCont">
+        <ion-img (click)="openExternalUrl('https://openweathermap.org/city/3129813')" src="{{ iconUrl }}" id="wicon"
+          class="top"></ion-img>
+        <ion-label id="temp">{{ temp }}</ion-label>
+        <!-- <span id="temp">{{ temp }}</span> -->
+      </div>
+
+      <ion-img src="../../../assets/images/home/ayuntamientoArbancon.png" button
+        (click)="openExternalUrl('http://www.arbancon.es/')" class="bottom">
+      </ion-img>
+
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>
+
+<ion-footer color="primary">
+
+  <ion-chip color="white" button (click)="openExternalUrl('https://www.facebook.com/arbancon.guadalajara')">
+    <ion-icon name="logo-facebook"></ion-icon>
+    <ion-label>Facebook</ion-label>
+  </ion-chip>
+
+  <ion-chip color="white" button (click)="openExternalUrl('https://www.instagram.com/turismoarbancon/')">
+    <ion-icon name="logo-instagram"></ion-icon>
+    <ion-label>Instagram</ion-label>
+  </ion-chip>
+
+  <ion-chip color="white" button (click)="openExternalUrl('https://www.turismoarbancon.com/')">
+    <ion-icon name="globe-outline"></ion-icon>
+    <ion-label>Internet</ion-label>
+  </ion-chip>
+
+  <ion-chip color="white" button (click)="openExternalUrl('https://twitter.com/TurismoArbancon')">
+    <ion-icon name="logo-twitter"></ion-icon>
+    <ion-label>Twitter</ion-label>
+  </ion-chip>
+
+</ion-footer>
+
+<!-- <ion-footer>
+  <div class="footer">
+    
+    <ion-chip color="twitter" outline button href="https://www.facebook.com/arbancon.guadalajara">
+      <ion-icon name="logo-twitter"></ion-icon>
+      <ion-label>Twitter</ion-label>
+    </ion-chip>
+
+    <ion-chip color="dark" button >
+      <ion-icon name="logo-github"></ion-icon>
+      <ion-label>GitHub</ion-label>
+    </ion-chip>
+
+    <ion-chip color="instagram" button >
+      <ion-icon name="logo-instagram"></ion-icon>
+      <ion-label>Instagram</ion-label>
+    </ion-chip>
+  </div>
+</ion-footer> -->
+
+
+<!-- <ion-footer>
+  <ion-toolbar color="danger">
+
+    <ion-fab horizontal="star" vertical="center" >
+      <ion-fab-button size="small" href="https://www.facebook.com/arbancon.guadalajara" >
+        <ion-icon name="logo-facebook" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-fab horizontal="center" vertical="center">
+      <ion-fab-button size="small" href="https://www.turismoarbancon.com">
+        <ion-icon name="earth-outline" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-fab horizontal="end" vertical="center" >
+      <ion-fab-button size="small" href="https://twitter.com/TurismoArbancon">
+        <ion-icon name="logo-twitter" ></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </ion-toolbar>
+</ion-footer> -->

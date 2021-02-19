@@ -1,0 +1,7 @@
+{
+  "name": "testSuper-tabs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

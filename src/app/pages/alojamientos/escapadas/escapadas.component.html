@@ -1,0 +1,70 @@
+<ion-header (click)="expandHeader()">
+    
+    <ion-toolbar color="green" >
+
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+      <ion-text>
+        <h6 class="ion-text-uppercase">
+          Escapadas
+          <span *ngIf="expanded" >&#9650;</span>
+          <span *ngIf="!expanded">&#9660;</span>
+        </h6>
+        
+        <app-expandable expandHeight="150px" [expanded]= expanded>
+          <!-- <p>
+            Hemos preparado paquetes de ofertas especiales para un fin de semana rural. Para detalles, consultar a los propietarios
+          </p>   -->
+          <p>{{ headText }}</p>  
+        </app-expandable>    
+      </ion-text>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let escapada of escapadas"
+      lines="none">
+      <ion-card>
+
+        <div class="card-header">
+          
+            <ion-card-title class="ion-text-start">
+                {{ escapada.name }}          
+            </ion-card-title>
+
+            <ion-card-subtitle 
+              class="ion-text-start ion-text-uppercase">
+              {{ escapada.vendor }} 
+            </ion-card-subtitle>
+
+            <div class="precio">
+              {{ escapada.price }} €
+            </div>
+        </div>
+        
+        <div class="inCard">
+          
+          <div class="imgInCard">
+            <ion-img [src] = "escapada.list_img.url"></ion-img>
+          </div>
+          
+            <ion-card-content >
+              
+              <ion-badge color="green"
+                        *ngFor="let feature of escapada.features"
+              >
+                {{ feature }}
+              </ion-badge>
+            </ion-card-content>
+              
+        </div>   
+      </ion-card>    
+    </ion-item>
+    
+  </ion-list>
+</ion-content>
+
+

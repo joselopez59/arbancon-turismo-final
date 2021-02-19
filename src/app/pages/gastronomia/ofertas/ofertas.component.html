@@ -1,0 +1,33 @@
+
+<ion-header
+  color="primary" 
+  (click)="expandHeader()">
+
+  <ion-toolbar color="green">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <ion-text>
+      <h6 class="ion-text-uppercase">
+        Ofertas
+        <span *ngIf="expanded" >&#9650;</span>
+        <span *ngIf="!expanded">&#9660;</span>
+      </h6>
+      <app-expandable expandHeight="150px" [expanded]= expanded>
+        <p>
+          {{ headText }}          
+        </p>  
+      </app-expandable>
+    </ion-text>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-img *ngFor="let oferta of ofertas"
+            [src]= "oferta.imagen.url"></ion-img>
+
+</ion-content>
+

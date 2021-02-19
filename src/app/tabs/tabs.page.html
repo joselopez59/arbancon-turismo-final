@@ -1,0 +1,63 @@
+<super-tabs activeTabIndex="0">
+
+  <super-tabs-toolbar slot="top">
+
+    <super-tab-button>
+      <ion-icon name="information-circle-outline"></ion-icon>
+      <!-- <ion-label>Home</ion-label> -->
+    </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="home-outline"></ion-icon>
+      <!-- <ion-label>Alojamientos</ion-label> -->
+    </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <!-- <ion-label>Gastronomia</ion-label> -->
+    </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="camera-outline"></ion-icon>
+      <!-- <ion-label>Patrimonio</ion-label> -->
+    </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="walk-outline"></ion-icon>
+      <!-- <ion-label>Actividades</ion-label> -->
+    </super-tab-button>
+
+    <super-tab-button>
+      <ion-icon name="today-outline"></ion-icon>
+      <!-- <ion-label>Eventos</ion-label> -->
+    </super-tab-button>
+
+  </super-tabs-toolbar>
+
+  <super-tabs-container>
+    <super-tab noScroll="true">
+      <ion-nav [root] = "homePage"></ion-nav>
+    </super-tab>
+
+    <super-tab>      
+      <ion-nav [root] = "alojamientosPage"></ion-nav>
+    </super-tab>
+
+    <super-tab>      
+      <ion-nav [root] = "gastronomiaPage"></ion-nav>
+    </super-tab>
+
+    <super-tab>      
+      <ion-nav [root] = "patrimonioPage"></ion-nav>
+    </super-tab>
+
+    <super-tab>      
+      <ion-nav [root] = "actividadesPage"></ion-nav>
+    </super-tab>
+
+    <super-tab>      
+      <ion-nav [root] = "eventosPage"></ion-nav>
+    </super-tab>
+      
+  </super-tabs-container>
+</super-tabs>

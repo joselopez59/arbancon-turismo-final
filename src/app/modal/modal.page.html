@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>{{ title }}</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <ion-text>
+
+    <ion-row *ngIf="propietario"
+      class="ion-align-items-center">
+      <ion-col size="3">
+        <ion-button *ngIf="propietario"
+                    fill="clear" 
+                    color="green">
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="9">
+        <ion-label>{{ propietario }}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-align-items-center">
+      <ion-col size="3" >
+
+        <ion-button *ngIf="gmapsURL"
+                    fill="clear"
+                    color="green"
+                    (click)="openExternalUrl(gmapsURL)"
+        >
+          <ion-icon  name="locate-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="9">
+        <ion-row>
+          <ion-label>{{ calle }}</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-label>{{ localidad }}</ion-label>
+        </ion-row>
+        <ion-row>
+          <ion-label>{{ provincia }}</ion-label>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    
+    <ion-row *ngIf="tel"
+      class="ion-align-items-center">
+      <ion-col size="3">
+        <ion-button 
+          fill="clear"
+          (click)="openWindow('tel:', tel )"
+        >
+        <ion-icon slot="icon-only" 
+                  name="call-outline" 
+                  color="green"
+        ></ion-icon>
+      </ion-button>
+      </ion-col>
+      <ion-col size="9">
+        <ion-label>{{ tel }}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="mail"
+      class="ion-align-items-center"
+    >
+      <ion-col size="3">
+        <ion-button 
+          fill="clear"
+          (click)="openWindow('mailto:', mail )"
+        >
+          <ion-icon slot="icon-only" 
+                    name="mail-outline"
+                    color="green" 
+          ></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="9">
+        <ion-label>{{ mail }}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row  *ngFor= "let item of footers"
+              class="ion-align-items-center"
+    >
+      <ion-col size="3">
+        <ion-button 
+          fill="clear"
+          (click)="openExternalUrl(item.url)"
+        >
+          <ion-icon slot="icon-only" 
+                    name="{{item.icon}}" 
+                    color="green" 
+          ></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="9">
+        <ion-label>{{ item.url }}</ion-label>
+      </ion-col>
+    </ion-row>
+    
+    <!-- TO DO: Datos legales -->
+  </ion-text>
+</ion-content>

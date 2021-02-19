@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end">
+      <ion-button (click)="openModal()">
+        <ion-icon slot="icon-only" name="information-outline"></ion-icon>
+      </ion-button>
+      <!-- <ion-button (click)="openSpeakerShare(alojamiento)">
+        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
+
+    <ion-title>{{ alojamiento.name }}</ion-title>
+
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-slides pager="true" [options]="slideOpts" >
+      
+    <ion-slide *ngFor="let slide of alojamiento.slider">
+      <ion-img [src]="slide.url"></ion-img>
+    </ion-slide>
+    
+  </ion-slides>
+  
+  <ion-grid class="subSlider">
+    <ion-row>
+      <ion-col 
+      size="4"
+      *ngFor="let feature of alojamiento.features"
+      >
+        <ion-label >
+          {{ feature }}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="ion-text-justify ion-padding">
+    <ion-text >
+      {{ alojamiento.profil }}
+    </ion-text>
+  </div>
+    
+</ion-content>
+
+<ion-footer >
+  
+  <ion-chip *ngFor="let footer of alojamiento.footers"
+    color= "white"
+    button (click)="openExternalUrl(footer.url)"
+  >
+    <ion-icon name="{{footer.icon}}"></ion-icon>
+    <ion-label>{{footer.label}}</ion-label>
+  </ion-chip>
+  
+</ion-footer>

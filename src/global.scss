@@ -1,0 +1,263 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/* Leaflet stylesheet */
+@import "~leaflet/dist/leaflet.css";
+
+.ion-color-green {
+  --ion-color-base: var(--ion-color-green);
+  --ion-color-base-rgb: var(--ion-color-green-rgb);
+  --ion-color-contrast: var(--ion-color-green-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-green-contrast-rgb);
+  --ion-color-shade: var(--ion-color-green-shade);
+  --ion-color-tint: var(--ion-color-green-tint);
+}
+
+ion-app {
+  margin: auto;
+}
+
+ion-content {
+  
+  border-left: 1px solid rgb(190, 190, 190);
+  border-right: 1px solid rgb(190, 190, 190);
+}
+
+ion-app, ion-content, ion-footer {
+  @media (min-width: 780px) {
+    max-width: 360px;
+    max-height: 540px;
+  }
+}
+
+ion-text {
+  color: var(--ion-color-text);
+}
+
+ion-card {
+  --background: var(--ion-color-background);
+}
+
+/** HEADER sobre CONTENT  **/
+ion-header {
+
+  display: flex;
+  align-items: center;
+  
+  ion-buttons { 
+    align-self: flex-start;
+    margin-top: 6px;
+  }
+
+  ion-title {
+    font-size: 20px;
+  }
+
+  ion-text {
+    text-align: right;
+    color:white;
+  }
+    h6 { 
+        padding-right: 20px;
+        text-align: center;
+        span {
+          float: right;
+        }
+    }
+    
+    app-expandable p {
+        padding-right: 20px; 
+        text-align: justify;
+        font-size: 14px;
+    }
+}
+
+/** CONTENT  **/
+ion-content {
+  
+  ion-header {
+    background-color: var(--ion-color-green);
+    padding: 0.5em;
+    ion-text {
+      color: white;
+      font-weight: 300;
+      text-align: justify;
+      font-size: 14px;
+
+      h6 {
+        position: relative;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 4px;
+
+        span {
+          position: absolute;
+          right: 0.2em;         
+        }
+      }
+      
+      app-expandable p {
+        padding-right: 0; 
+        margin: 0;
+      }
+    }
+  }
+}
+
+/** LIST  **/
+ion-list {
+
+  ion-card {
+    width: 100%;
+    margin: 0.4em 0;
+    // padding: 0;
+    border-radius: 24px 8px 24px 8px;
+
+    ion-card-content {
+      display: flex;
+
+      div {
+        text-align: right;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content:  space-between;
+        align-items: flex-end;
+        padding: 8px 20px 4px 8px;      
+      }
+
+      ion-card-title {
+        font-size: 120%;
+        --color: var(--ion-color-green);
+      }
+
+      // ion-card-subtitle {
+      //   // font-size: 80%;      
+      // }
+    }
+  }
+}
+
+/** GRID  in TAB Patrimonio and TAB actividades**/
+ion-grid {
+
+  ion-card {
+    border-radius: 24px 8px 24px 8px;
+    margin: 0.4em 0;
+    text-align: center;
+    
+    // img {
+    //   // TO DO: img size 150x150
+    //   width:100%;
+    //   height: 150px;
+    //   border-radius: 0;
+    // }
+
+    ion-img {
+      // TO DO: img size 150x150
+      width: 100%;
+      height: 150px;
+      border-radius: 0;
+      object-fit: cover;
+    }
+
+
+    p { text-align: center; }
+
+  }
+  
+}
+
+/**  GRID unter SLIDER  **/
+ion-grid.subSlider {
+
+  background-color: var(--ion-color-green);  
+
+  ion-col {
+    text-align: center;
+    padding: 0;
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  ion-label {
+    color: white;
+  }
+}
+
+/** FOOTER **/
+ion-footer {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--ion-color-danger);
+
+  ion-button {
+    --padding-start: 6px;
+    --padding-end: 6px;
+  }
+
+  ion-label {
+    font-size: 11px;
+  }
+
+  ion-chip {
+    color: white;
+    border: 2px;
+    margin: 0;
+
+    ion-icon {
+      color: white;
+    }
+  }
+}
+
+/** MAPA  **/
+
+.mapicon {
+  
+  width: 30px;
+  height: 30px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, .8);
+  border-radius: 50%;
+  border: 1px solid gray;
+  background-color: #26A767;
+}
+
+.mapicontext {
+  // width: 150px !important;
+  color: rgb(78, 30, 30);
+}
+
+.leaflet-popup-content  {
+  margin: 3px 9px;
+  div {
+    color: var(--ion-color-text);
+  }
+  
+}

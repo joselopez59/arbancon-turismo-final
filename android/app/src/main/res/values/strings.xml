@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">arbanconturismo</string>
+    <string name="title_activity_main">arbanconturismo</string>
+    <string name="package_name">de.joselopez.arbanconturismo</string>
+    <string name="custom_url_scheme">de.joselopez.arbanconturismo</string>
+</resources>

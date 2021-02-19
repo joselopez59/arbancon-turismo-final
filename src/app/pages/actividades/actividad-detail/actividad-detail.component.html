@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ actividad.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+scrollEvents="true"  
+[fullscreen]="true"
+[appImageFade]="cover"
+>
+  <div class="ion-text-center image-box" #cover>
+    <img src="{{imgURL}}">
+  </div>
+  
+  <div class="main ion-padding">
+    
+    <ion-text class=" ion-text-justify">
+      <markdown [data]="actividad.markdownText" style="line-height: 140%;"></markdown>
+    </ion-text>
+    
+  </div>
+  
+</ion-content>
+
+<ion-footer class="ion-justify-content-center">
+
+  <!-- <ion-chip  
+    *ngFor="let button of actividad.buttons"
+    outline = true
+    color= "white"
+  >
+    <ion-icon name= "{{ button.icon }}"></ion-icon>
+    <ion-label>{{ button.text }}</ion-label>
+  </ion-chip> -->
+
+</ion-footer>
