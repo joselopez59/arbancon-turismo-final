@@ -1,20 +1,16 @@
 <ion-content>
   
-  <ion-header 
-    color="green" 
-    (click)="expandHeader()">
+  <ion-header color="green" 
+              (click)="expandHeader()"
+  >
     <ion-text>
       <h6 class="ion-text-uppercase">
-        <!-- {{ gastronomias.categoria}} -->
         Gastronomía
         <span *ngIf="expanded" >&#9650;</span>
         <span *ngIf="!expanded">&#9660;</span>
       </h6>
       <app-expandable expandHeight="150px" [expanded]= expanded>
-        <p>
-          {{ headText}}
-          <!-- Los restaurantes de Arbancón preparan especialidades de la cocina serrana tienda de ultramarinos para el abastecimiento diario y venta de productos naturales de la huerta local. -->
-        </p>  
+        <p>{{ headText}}</p>  
       </app-expandable>    
     </ion-text>
   </ion-header>

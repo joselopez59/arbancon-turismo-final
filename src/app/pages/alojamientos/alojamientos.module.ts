@@ -7,7 +7,7 @@ import { ExpandableModule } from 'src/app/components/expandable/expandable.modul
 import { AlojamientosPage } from './alojamientos.page';
 import { EscapadasComponent } from './escapadas/escapadas.component';
 import { AlojamientoDetailComponent } from './alojamiento-detail/alojamiento-detail.component';
-import { ModalPageModule } from './../../modal/modal.module';
+// import { ModalPageModule } from './../../modal/modal.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { ModalPageModule } from './../../modal/modal.module';
     IonicModule,
     AlojamientosPageRoutingModule,
     ExpandableModule,
-    ModalPageModule
+    // ModalPageModule
   ],
   declarations: [
     AlojamientosPage,

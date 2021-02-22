@@ -7,12 +7,14 @@ import { ExpandableModule } from 'src/app/components/expandable/expandable.modul
 import { GastronomiaPage } from './gastronomia.page';
 import { GastronomiaDetailComponent } from './gastronomia-detail/gastronomia-detail.component';
 import { OfertasComponent } from './ofertas/ofertas.component';
+// import { ModalPageModule } from 'src/app/modal/modal.module';
 @NgModule({
   imports: [
     CommonModule,
     IonicModule,
     GastronomiaPageRoutingModule,
-    ExpandableModule
+    ExpandableModule,
+    // ModalPageModule
   ],
   declarations: [
     GastronomiaPage,
