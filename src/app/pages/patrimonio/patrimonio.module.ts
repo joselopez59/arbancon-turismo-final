@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { PatrimonioPageRoutingModule } from './patrimonio-routing.module';
-import { ExpandableModule } from 'src/app/components/expandable/expandable.module';
+import { HeaderExpandableModule } from 'src/app/shared-components/header-expandable/header-expandable.module';
 import { PatrimonioPage } from './patrimonio.page';
 import { PatrimonioDetailComponent } from './patrimonio-detail/patrimonio-detail.component';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
@@ -14,7 +14,7 @@ import { SharedDirectivesModule } from 'src/app/directives/shared-directives.mod
     CommonModule,
     IonicModule,
     PatrimonioPageRoutingModule,
-    ExpandableModule,
+    HeaderExpandableModule,
     MarkdownModule.forChild(),
     SharedDirectivesModule
   ],

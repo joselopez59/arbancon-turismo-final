@@ -8,9 +8,7 @@ import { EscapadasService } from 'src/app/pages/alojamientos/escapadas.service';
 export class EscapadasComponent implements OnInit {
 
   escapadas: any[] = [];
-  headText;
-  expanded = false;
-
+  headText: string;
   constructor( private escapadasService: EscapadasService ) { }
 
   ngOnInit() {
@@ -20,14 +18,6 @@ export class EscapadasComponent implements OnInit {
       this.escapadas = result.data.getEscapadas[0].escapadas;
       this.headText = result.data.getEscapadas[0].headText;
     });
-  }
-
-  expandHeader() {
-    if (this.expanded) {
-      this.expanded = false;
-    } else {
-      this.expanded = !this.expanded;
-    }
   }
 
 }

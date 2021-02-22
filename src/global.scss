@@ -97,70 +97,70 @@ ion-header {
 }
 
 /** CONTENT  **/
-ion-content {
+// ion-content {
   
-  ion-header {
-    background-color: var(--ion-color-green);
-    padding: 0.5em;
-    ion-text {
-      color: white;
-      font-weight: 300;
-      text-align: justify;
-      font-size: 14px;
+//   ion-header {
+//     background-color: var(--ion-color-green);
+//     padding: 0.5em;
+//     ion-text {
+//       color: white;
+//       font-weight: 300;
+//       text-align: justify;
+//       font-size: 14px;
 
-      h6 {
-        position: relative;
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 4px;
+//       h6 {
+//         position: relative;
+//         text-align: center;
+//         margin-top: 0;
+//         margin-bottom: 4px;
 
-        span {
-          position: absolute;
-          right: 0.2em;         
-        }
-      }
+//         span {
+//           position: absolute;
+//           right: 0.2em;         
+//         }
+//       }
       
-      app-expandable p {
-        padding-right: 0; 
-        margin: 0;
-      }
-    }
-  }
-}
+//       app-expandable p {
+//         padding-right: 0; 
+//         margin: 0;
+//       }
+//     }
+//   }
+// }
 
 /** LIST  **/
-ion-list {
+// ion-list {
 
-  ion-card {
-    width: 100%;
-    margin: 0.4em 0;
-    // padding: 0;
-    border-radius: 24px 8px 24px 8px;
+//   ion-card {
+//     width: 100%;
+//     margin: 0.4em 0;
+//     // padding: 0;
+//     border-radius: 24px 8px 24px 8px;
 
-    ion-card-content {
-      display: flex;
+//     ion-card-content {
+//       display: flex;
 
-      div {
-        text-align: right;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content:  space-between;
-        align-items: flex-end;
-        padding: 8px 20px 4px 8px;      
-      }
+//       div {
+//         text-align: right;
+//         width: 100%;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content:  space-between;
+//         align-items: flex-end;
+//         padding: 8px 20px 4px 8px;      
+//       }
 
-      ion-card-title {
-        font-size: 120%;
-        --color: var(--ion-color-green);
-      }
+//       ion-card-title {
+//         font-size: 120%;
+//         --color: var(--ion-color-green);
+//       }
 
-      // ion-card-subtitle {
-      //   // font-size: 80%;      
-      // }
-    }
-  }
-}
+//       // ion-card-subtitle {
+//       //   // font-size: 80%;      
+//       // }
+//     }
+//   }
+// }
 
 /** GRID  in TAB Patrimonio and TAB actividades**/
 ion-grid {

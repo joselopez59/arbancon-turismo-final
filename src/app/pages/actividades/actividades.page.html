@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-header 
+  <!-- <ion-header 
     color="green" 
     (click)="expandHeader()">
     <ion-text>
@@ -11,12 +11,15 @@
       </h6>
       <app-expandable expandHeight="150px" [expanded]= expanded>
         <p>
-          <!-- Arbancón ofrece un rico y variado patrimonio histórico y cultural que sus orgullososo vecinos conservan y amplían constantemente. Un paseo por sus callejas y plazas revela el carácter de esta villa, su privilegiada historia y la cordialidad de sus entrañables habitantes. -->
           {{ headText }}
         </p>  
       </app-expandable>    
     </ion-text>
-  </ion-header>
+  </ion-header> -->
+
+  <app-header-expandable  type="escapadas"
+                          [headText]="headText"
+  ></app-header-expandable>
 
   <ion-grid >
     <ion-row>

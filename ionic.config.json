@@ -1,7 +1,8 @@
 {
   "name": "testSuper-tabs",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

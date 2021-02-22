@@ -1,0 +1,37 @@
+<ion-item 
+    *ngFor="let item of items" 
+    [routerLink]="['/' + type + '/' + item.id]"
+    routerDirection="forward" 
+    lines="none">
+
+      <ion-card >
+
+        <ion-card-content class="ion-no-padding">
+          
+          <img src = "{{ item.list_img.url }}">
+
+          <div>
+            <ion-card-title  class="ion-text-end">
+              {{ item.name }}
+            </ion-card-title>
+            
+            <ion-card-subtitle 
+              *ngIf="type === 'alojamientos'"
+              class="ion-text-end"
+            >
+              {{ item.shortProfil }}
+            </ion-card-subtitle>
+           
+            <div *ngIf="type === 'gastronomia'">
+              <ion-card-subtitle 
+                class="ion-text-end"
+                *ngFor="let feature of item.features"
+              >
+                {{ feature }}
+              </ion-card-subtitle>
+            </div>
+          </div>
+        
+        </ion-card-content>      
+      </ion-card>
+    </ion-item>

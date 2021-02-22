@@ -1,0 +1,20 @@
+<ion-header color="green" 
+            (click)="expandHeader()"
+  >
+  <ion-text>
+    <ion-back-button *ngIf="backButton"
+    defaultHref="/"></ion-back-button>
+  </ion-text>
+  
+  <ion-text>
+    <h6 class="ion-text-uppercase">
+      {{ type}}
+      <span *ngIf="expanded" >&#9650;</span>
+      <span *ngIf="!expanded">&#9660;</span>
+    </h6>
+
+    <app-expandable expandHeight="150px" [expanded]=expanded>
+      <p>{{headText}}</p>  
+    </app-expandable>   
+  </ion-text>
+  </ion-header>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AlojamientosService } from './alojamientos.service';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-alojamientos',
@@ -13,7 +12,7 @@ export class AlojamientosPage implements OnInit {
 
   headText = '';
   alojamientos: any[] = [];
-  expanded = false;
+  // expanded = false;
 
   constructor(
     private alojamientosService: AlojamientosService
@@ -28,13 +27,13 @@ export class AlojamientosPage implements OnInit {
     });
   }
 
-  expandHeader() {
-    // console.log("expandHeader()");
-    if (this.expanded) {
-      this.expanded = false;
-    } else {
-      this.expanded = !this.expanded;
-    }
-  }
+  // expandHeader() {
+  //   // console.log("expandHeader()");
+  //   if (this.expanded) {
+  //     this.expanded = false;
+  //   } else {
+  //     this.expanded = !this.expanded;
+  //   }
+  // }
 
 }

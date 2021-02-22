@@ -1,4 +1,4 @@
-<ion-header (click)="expandHeader()">
+<!-- <ion-header (click)="expandHeader()">
     
     <ion-toolbar color="green" >
 
@@ -13,14 +13,17 @@
         </h6>
         
         <app-expandable expandHeight="150px" [expanded]= expanded>
-          <!-- <p>
-            Hemos preparado paquetes de ofertas especiales para un fin de semana rural. Para detalles, consultar a los propietarios
-          </p>   -->
+          
           <p>{{ headText }}</p>  
         </app-expandable>    
       </ion-text>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
+
+<app-header-expandable  type="escapadas"
+                        backButton="true"
+                        [headText]="headText"
+></app-header-expandable>
 
 <ion-content>
 

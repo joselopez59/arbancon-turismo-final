@@ -13,6 +13,8 @@ export class EventosPage implements OnInit {
 
   expanded = false;
   eventos: any[] = [];
+  headText =
+    'El calendario de actividades de Arbancón se ve salpicado por numerosos eventos a lo largo del año. Para ver los anteriores, consultar el calendario';
 
   constructor(
     private eventosService: EventosService,
@@ -37,11 +39,6 @@ export class EventosPage implements OnInit {
       this.expanded = !this.expanded;
     }
   }
-
-  // openWindow(target: string) {
-  //   console.log(target);
-  //   window.open('' + target);
-  // }
 
   addToGCalender(evento) {
     const gcURL = 'https://calendar.google.com/calendar/render?action=TEMPLATE';

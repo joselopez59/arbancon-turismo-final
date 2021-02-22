@@ -10,7 +10,6 @@ export class GastronomiaPage implements OnInit {
 
   public gastronomias: [] = [];
   headText = '';
-  public expanded = false;
 
   constructor(
     public gastronomiaService: GastronomiaService
@@ -23,15 +22,6 @@ export class GastronomiaPage implements OnInit {
       // console.log(result.data.getGastronomias[0]);
       this.gastronomias = result.data.getGastronomias[0].gastronomias;
       this.headText = result.data.getGastronomias[0].headText;
-      // console.log(this.gastronomias[0].name);
     });
-  }
-
-  expandHeader() {
-    if (this.expanded) {
-      this.expanded = false;
-    } else {
-      this.expanded = !this.expanded;
-    }
   }
 }

@@ -1,6 +1,8 @@
 <ion-content>
-  
-  <ion-header color="green" 
+  <app-header-expandable  type="gastronomia"
+                          [headText]="headText"
+  ></app-header-expandable>
+  <!-- <ion-header color="green" 
               (click)="expandHeader()"
   >
     <ion-text>
@@ -13,10 +15,15 @@
         <p>{{ headText}}</p>  
       </app-expandable>    
     </ion-text>
-  </ion-header>
+  </ion-header> -->
 
   <ion-list>
-    <ion-item
+
+    <app-list-item  type="gastronomia"
+                    [items]="gastronomias"
+    ></app-list-item>
+
+    <!-- <ion-item
     *ngFor="let gastronomia of gastronomias"
     [routerLink]="['/gastronomia/' + gastronomia.id]"
     routerDirection="forward"
@@ -25,17 +32,13 @@
       <ion-card>
 
         <ion-card-content class="ion-no-padding">
-          <img src = "{{gastronomia.list_img.url}}">
-          <!-- <ion-img [src] = "gastronomia.list_img.url"></ion-img> -->
-          
+          <img src = "{{gastronomia.list_img.url}}">          
           <div>
-
             <ion-card-title>
             {{ gastronomia.name }}
             </ion-card-title>
             
-            <ion-card-subtitle 
-            class="ion-text-end"
+            <ion-card-subtitle class="ion-text-end"
             *ngFor="let feature of gastronomia.features">
               {{ feature }}
             </ion-card-subtitle>
@@ -43,7 +46,7 @@
           </div>
         </ion-card-content>
       </ion-card>
-    </ion-item>
+    </ion-item> -->
   </ion-list>
 </ion-content>
 

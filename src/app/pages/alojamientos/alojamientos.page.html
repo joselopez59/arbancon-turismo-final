@@ -1,5 +1,8 @@
 <ion-content >
-  <ion-header color="green" 
+  <app-header-expandable  type="alojamientos"
+                          [headText]="headText"
+  ></app-header-expandable>
+  <!-- <ion-header color="green" 
               (click)="expandHeader()"
   >
     <ion-text>
@@ -12,10 +15,14 @@
         <p>{{headText}}</p>  
       </app-expandable>   
     </ion-text>
-  </ion-header>
+  </ion-header> -->
 
   <ion-list>
-    <ion-item 
+
+    <app-list-item  type="alojamientos"
+                    [items]="alojamientos"
+    ></app-list-item>
+    <!-- <ion-item 
     *ngFor="let alojamiento of alojamientos" 
     [routerLink]="['/alojamientos/' + alojamiento.id]"
     routerDirection="forward" 
@@ -25,7 +32,6 @@
 
         <ion-card-content class="ion-no-padding">
           
-          <!-- <ion-img [src] = "alojamiento.list_img.url"></ion-img> -->
           <img src = "{{ alojamiento.list_img.url }}">
 
           <div>
@@ -40,7 +46,7 @@
         
         </ion-card-content>      
       </ion-card>
-    </ion-item>
+    </ion-item> -->
     
   </ion-list>
 </ion-content>

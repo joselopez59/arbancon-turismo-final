@@ -9,9 +9,8 @@ import { GastronomiaService } from '../gastronomia.service';
 })
 export class OfertasComponent implements OnInit {
 
-  headText = '';
-  public expanded = false;
-  public ofertas: any = '';
+  headText: string;
+  public ofertas: [] = [];
 
   constructor(
     private ofertasService: GastronomiaService
@@ -24,13 +23,5 @@ export class OfertasComponent implements OnInit {
         this.headText = result.data.getOfertas[0].headText;
         // console.log(result.data.getOfertas[0].ofertas);
       });
-  }
-
-  expandHeader() {
-    if (this.expanded) {
-      this.expanded = false;
-    } else {
-      this.expanded = !this.expanded;
-    }
   }
 }
