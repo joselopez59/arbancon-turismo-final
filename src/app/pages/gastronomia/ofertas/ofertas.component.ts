@@ -21,7 +21,6 @@ export class OfertasComponent implements OnInit {
       .subscribe( result => {
         this.ofertas = result.data.getOfertas[0].ofertas;
         this.headText = result.data.getOfertas[0].headText;
-        // console.log(result.data.getOfertas[0].ofertas);
       });
   }
 }

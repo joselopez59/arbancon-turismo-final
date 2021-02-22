@@ -27,7 +27,6 @@ export class EventosPage implements OnInit {
     this.eventosService.getProximosEventos(today)
     .subscribe(result => {
       this.eventos = result.data.eventos;
-      // console.log(this.eventos);
     });
   }
 
@@ -64,5 +63,4 @@ export class EventosPage implements OnInit {
       );
     }
   }
-
 }

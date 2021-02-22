@@ -62,106 +62,6 @@ ion-card {
   --background: var(--ion-color-background);
 }
 
-/** HEADER sobre CONTENT  **/
-ion-header {
-
-  display: flex;
-  align-items: center;
-  
-  ion-buttons { 
-    align-self: flex-start;
-    margin-top: 6px;
-  }
-
-  ion-title {
-    font-size: 20px;
-  }
-
-  ion-text {
-    text-align: right;
-    color:white;
-  }
-    h6 { 
-        padding-right: 20px;
-        text-align: center;
-        span {
-          float: right;
-        }
-    }
-    
-    app-expandable p {
-        padding-right: 20px; 
-        text-align: justify;
-        font-size: 14px;
-    }
-}
-
-/** CONTENT  **/
-// ion-content {
-  
-//   ion-header {
-//     background-color: var(--ion-color-green);
-//     padding: 0.5em;
-//     ion-text {
-//       color: white;
-//       font-weight: 300;
-//       text-align: justify;
-//       font-size: 14px;
-
-//       h6 {
-//         position: relative;
-//         text-align: center;
-//         margin-top: 0;
-//         margin-bottom: 4px;
-
-//         span {
-//           position: absolute;
-//           right: 0.2em;         
-//         }
-//       }
-      
-//       app-expandable p {
-//         padding-right: 0; 
-//         margin: 0;
-//       }
-//     }
-//   }
-// }
-
-/** LIST  **/
-// ion-list {
-
-//   ion-card {
-//     width: 100%;
-//     margin: 0.4em 0;
-//     // padding: 0;
-//     border-radius: 24px 8px 24px 8px;
-
-//     ion-card-content {
-//       display: flex;
-
-//       div {
-//         text-align: right;
-//         width: 100%;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content:  space-between;
-//         align-items: flex-end;
-//         padding: 8px 20px 4px 8px;      
-//       }
-
-//       ion-card-title {
-//         font-size: 120%;
-//         --color: var(--ion-color-green);
-//       }
-
-//       // ion-card-subtitle {
-//       //   // font-size: 80%;      
-//       // }
-//     }
-//   }
-// }
-
 /** GRID  in TAB Patrimonio and TAB actividades**/
 ion-grid {
 
@@ -184,12 +84,8 @@ ion-grid {
       border-radius: 0;
       object-fit: cover;
     }
-
-
     p { text-align: center; }
-
   }
-  
 }
 
 /**  GRID unter SLIDER  **/

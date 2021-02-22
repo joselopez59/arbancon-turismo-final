@@ -1,6 +1,10 @@
 ion-header {
   background-color: var(--ion-color-green);
   padding: 0.5em;
+  
+  display: flex;
+  align-items: center;
+
   ion-text {
     color: white;
     font-weight: 300;
@@ -20,7 +24,7 @@ ion-header {
     }
     
     app-expandable p {
-      padding-right: 0; 
+      padding: 0 25px; 
       margin: 0;
     }
   }
