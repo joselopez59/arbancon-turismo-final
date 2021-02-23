@@ -26,15 +26,5 @@
   
 </ion-content>
 
-<ion-footer>
-  
-  <ion-chip
-    *ngFor="let button of patrimonio.buttons"
-    button (click)="openExternalUrl(button.url)"
-    color= "white"
-  >
-    <ion-icon name= "{{ button.icon }}"></ion-icon>
-    <ion-label>{{ button.name }}</ion-label>
-  </ion-chip>
-
-</ion-footer>
+<app-footer-detail [items]="patrimonio.buttons">
+</app-footer-detail>

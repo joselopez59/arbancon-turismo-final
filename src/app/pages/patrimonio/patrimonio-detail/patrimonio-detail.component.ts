@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
-import { environment } from 'src/environments/environment';
 import { PatrimonioService } from '../patrimonio.service';
 
 @Component({
@@ -13,7 +12,6 @@ import { PatrimonioService } from '../patrimonio.service';
 
 export class PatrimonioDetailComponent implements OnInit {
 
-  env = environment;
   patrimonio: any = {};
   public imgURL = '';
 
@@ -28,18 +26,9 @@ export class PatrimonioDetailComponent implements OnInit {
 
     this.patrimonioService.getPatrimonio(id)
       .subscribe(result => {
-        // console.log('result', result);
         this.patrimonio = result.data.patrimonio;
-        // console.log('this.patrimonio', this.patrimonio);
+        // console.log('this.patrimonio', this.patrimonio.buttons);
         this.imgURL = this.patrimonio.detail_img.url;
       });
   }
-
-  openExternalUrl(url: string) {
-    this.inAppBrowser.create(
-      url,
-      '_blank'
-    );
-  }
-
 }

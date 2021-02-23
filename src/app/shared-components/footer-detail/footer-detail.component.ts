@@ -15,9 +15,11 @@ export class FooterDetailComponent implements OnInit {
   ngOnInit() {}
 
   openExternalUrl(url: string) {
-    this.inAppBrowser.create(
-      url,
-      '_blank'
-    );
+    if (url) {
+      this.inAppBrowser.create(
+        url,
+        '_blank'
+      );
+    }
   }
 }

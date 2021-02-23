@@ -7,6 +7,7 @@ import { PatrimonioPageRoutingModule } from './patrimonio-routing.module';
 import { PatrimonioPage } from './patrimonio.page';
 import { HeaderExpandableModule } from 'src/app/shared-components/header-expandable/header-expandable.module';
 import { PatrimonioDetailComponent } from './patrimonio-detail/patrimonio-detail.component';
+import { FooterDetailModule } from 'src/app/shared-components/footer-detail/footer-detail.module';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SharedDirectivesModule } from 'src/app/directives/shared-directives.mod
     PatrimonioPageRoutingModule,
     HeaderExpandableModule,
     MarkdownModule.forChild(),
+    FooterDetailModule,
     SharedDirectivesModule
   ],
   declarations: [

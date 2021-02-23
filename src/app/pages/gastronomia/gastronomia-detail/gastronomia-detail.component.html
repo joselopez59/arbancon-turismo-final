@@ -35,14 +35,5 @@
 
 </ion-content>
 
-<ion-footer >
-
-  <ion-chip *ngFor="let footer of gastronomia.footers"
-    color= "white"
-    button (click)="openExternalUrl(footer.url)"
-  >
-    <ion-icon name="{{footer.icon}}"></ion-icon>
-    <ion-label>{{footer.label}}</ion-label>
-  </ion-chip>
-  
-</ion-footer>
+<app-footer-detail [items]="gastronomia.footers"
+></app-footer-detail>
