@@ -23,10 +23,8 @@ export class ActividadDetailComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.actividadesService.getActividad(id)
       .subscribe(result => {
-        console.log('result', result);
         this.actividad = result.data.actividad;
         this.imgURL = result.data.actividad.detail_img.url;
-        console.log('actividad', result.data.actividad.name);
       });
   }
 }
