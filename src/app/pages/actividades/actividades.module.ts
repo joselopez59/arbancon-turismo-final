@@ -8,9 +8,6 @@ import { ActividadesPage } from './actividades.page';
 import { HeaderExpandableModule } from 'src/app/shared-components/header-expandable/header-expandable.module';
 import { ActividadDetailComponent } from './actividad-detail/actividad-detail.component';
 import { MapaComponent } from './mapa/mapa.component';
-// import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate';
-import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
-
 
 @NgModule({
   imports: [
@@ -18,8 +15,7 @@ import { SharedDirectivesModule } from 'src/app/directives/shared-directives.mod
     IonicModule,
     ActividadesPageRoutingModule,
     HeaderExpandableModule,
-    MarkdownModule.forChild(),
-    SharedDirectivesModule
+    MarkdownModule.forChild()
   ],
   declarations:  [
     ActividadesPage,
