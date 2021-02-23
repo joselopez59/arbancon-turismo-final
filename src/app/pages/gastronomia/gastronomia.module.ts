@@ -7,9 +7,10 @@ import { GastronomiaPage } from './gastronomia.page';
 import { HeaderExpandableModule } from 'src/app/shared-components/header-expandable/header-expandable.module';
 import { ListItemModule } from 'src/app/shared-components/list-item/list-item.module';
 import { GastronomiaDetailComponent } from './gastronomia-detail/gastronomia-detail.component';
+import { AgDetailModule } from 'src/app/shared-components/ag-detail/ag-detail.module';
 import { OfertasComponent } from './ofertas/ofertas.component';
 // import { ModalPageModule } from 'src/app/modal/modal.module';
-import { ExpandableModule } from 'src/app/components/expandable/expandable.module';
+// import { ExpandableModule } from 'src/app/components/expandable/expandable.module';
 
 @NgModule({
   imports: [
@@ -18,8 +19,9 @@ import { ExpandableModule } from 'src/app/components/expandable/expandable.modul
     GastronomiaPageRoutingModule,
     HeaderExpandableModule,
     ListItemModule,
+    AgDetailModule,
     // ModalPageModule
-    ExpandableModule
+    // ExpandableModule
   ],
   declarations: [
     GastronomiaPage,

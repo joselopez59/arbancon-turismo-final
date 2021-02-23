@@ -1,0 +1,11 @@
+<ion-footer >
+
+  <ion-chip *ngFor="let item of items"
+    color= "white"
+    button (click)="openExternalUrl(item.url)"
+  >
+    <ion-icon name="{{item.icon}}"></ion-icon>
+    <ion-label>{{item.label}}</ion-label>
+  </ion-chip>
+  
+</ion-footer>

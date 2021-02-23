@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
-import { ModalController } from '@ionic/angular';
 
 import { AlojamientosService } from '../alojamientos.service';
-import { ModalPage } from 'src/app/modal/modal.page';
-
 
 @Component({
   selector: 'app-alojamiento-detail',
@@ -15,7 +12,8 @@ import { ModalPage } from 'src/app/modal/modal.page';
 
 export class AlojamientoDetailComponent implements OnInit {
 
-  public alojamiento: any = '';
+  public alojamiento: any = {};
+  componentProps: object;
 
   slideOpts = {
     initialSlide: 0,
@@ -29,7 +27,6 @@ export class AlojamientoDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private alojamientosService: AlojamientosService,
     private inAppBrowser: InAppBrowser,
-    public modalController: ModalController
   ) { }
 
   ngOnInit() {
@@ -37,29 +34,23 @@ export class AlojamientoDetailComponent implements OnInit {
 
     this.alojamientosService.getAlojamiento(id)
     .subscribe(result => {
-      // console.log('result', result);
       this.alojamiento = result.data.alojamiento;
-      // console.log('this.alojamiento', this.alojamiento.legals[0].propietario);
+      this.makeComponentProps();
     });
   }
 
-  async openModal() {
-
-    const modal = await this.modalController.create({
-      component: ModalPage,
-      componentProps: {
-        title: this.alojamiento.name,
-        propietario: this.alojamiento.legals[0].propietario,
-        calle: this.alojamiento.legals[0].calle,
-        localidad: this.alojamiento.legals[0].localidad,
-        provincia: this.alojamiento.legals[0].provincia,
-        gmapsURL: this.alojamiento.legals[0].gmapsURL,
-        tel: this.alojamiento.legals[0].telefono,
-        mail: this.alojamiento.legals[0].mail,
-        buttons: this.alojamiento.footers
-      }
-    });
-    return await modal.present();
+  makeComponentProps(): void {
+    this.componentProps = {
+      title: this.alojamiento.name,
+      propietario: this.alojamiento.legals[0].propietario,
+      calle: this.alojamiento.legals[0].calle,
+      localidad: this.alojamiento.legals[0].localidad,
+      provincia: this.alojamiento.legals[0].provincia,
+      gmapsURL: this.alojamiento.legals[0].gmapsURL,
+      tel: this.alojamiento.legals[0].telefono,
+      mail: this.alojamiento.legals[0].mail,
+      buttons: this.alojamiento.footers
+    };
   }
 
   openExternalUrl(url: string) {

@@ -9,10 +9,8 @@ import { Component, AfterViewInit, Input, ViewChild,  ElementRef, Renderer2 } fr
 export class ExpandableComponent implements AfterViewInit {
 
   @ViewChild('expandWrapper', { read: ElementRef }) expandWrapper: ElementRef;
-  // tslint:disable-next-line: no-input-rename
-  @Input('expanded') expanded = false;
-  // tslint:disable-next-line: no-input-rename
-  @Input('expandHeight') expandHeight = '150px';
+  @Input() expanded: boolean;
+  @Input() expandHeight: string;
 
   constructor( public renderer: Renderer2 ) { }
 

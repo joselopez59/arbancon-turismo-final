@@ -1,23 +1,6 @@
-<ion-header>
-  <ion-toolbar color="primary">
-
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs"></ion-back-button>
-    </ion-buttons>
-
-    <ion-buttons slot="end">
-      <ion-button (click)="openModal()">
-        <ion-icon slot="icon-only" name="information-outline"></ion-icon>
-      </ion-button>
-      <!-- <ion-button (click)="openSpeakerShare(gastronomia)">
-        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
-      </ion-button> -->
-    </ion-buttons>
-
-    <ion-title>{{ gastronomia.name }}</ion-title>
-
-  </ion-toolbar>
-</ion-header>
+<app-ag-detail-header [name]="gastronomia.name"
+                      [componentProps]="componentProps"
+></app-ag-detail-header>
 
 <ion-content fullscreen>
 

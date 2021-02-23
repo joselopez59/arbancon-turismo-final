@@ -19,7 +19,6 @@ const routes: Routes = [
     component: AlojamientoDetailComponent
   },
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

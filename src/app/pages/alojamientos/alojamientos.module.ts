@@ -6,7 +6,8 @@ import { AlojamientosPage } from './alojamientos.page';
 import { HeaderExpandableModule } from 'src/app/shared-components/header-expandable/header-expandable.module';
 import { ListItemModule } from './../../shared-components/list-item/list-item.module';
 import { AlojamientoDetailComponent } from './alojamiento-detail/alojamiento-detail.component';
-import { ModalPageModule } from './../../modal/modal.module';
+import { AgDetailModule } from 'src/app/shared-components/ag-detail/ag-detail.module';
+import { FooterDetailModule } from 'src/app/shared-components/footer-detail/footer-detail.module';
 import { EscapadasComponent } from './escapadas/escapadas.component';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { EscapadasComponent } from './escapadas/escapadas.component';
     AlojamientosPageRoutingModule,
     HeaderExpandableModule,
     ListItemModule,
-    ModalPageModule
+    AgDetailModule,
+    FooterDetailModule
   ],
   declarations: [
     AlojamientosPage,

@@ -3,14 +3,16 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
 import { HeaderExpandableComponent } from './header-expandable.component';
-import { ExpandableModule } from 'src/app/components/expandable/expandable.module';
+import { ExpandableComponent } from './expandable/expandable.component';
 
 @NgModule({
-  declarations: [ HeaderExpandableComponent ],
+  declarations: [
+    HeaderExpandableComponent,
+    ExpandableComponent
+  ],
   imports: [
     CommonModule,
     IonicModule,
-    ExpandableModule
   ],
   exports: [
     HeaderExpandableComponent

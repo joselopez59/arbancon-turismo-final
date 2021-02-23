@@ -1,21 +1,6 @@
-<ion-header>
-  <ion-toolbar color="primary">
-
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs"></ion-back-button>
-    </ion-buttons>
-    
-    <ion-buttons slot="end">
-      <ion-button (click)="openModal()">
-        <ion-icon slot="icon-only" name="information-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
-    <ion-title>{{ alojamiento.name }}</ion-title>
-
-  </ion-toolbar>
-  
-</ion-header>
+<app-ag-detail-header [name]="alojamiento.name"
+                      [componentProps]="componentProps"
+></app-ag-detail-header>
 
 <ion-content fullscreen>
   <ion-slides pager="true" [options]="slideOpts" >
@@ -47,7 +32,10 @@
     
 </ion-content>
 
-<ion-footer >
+<app-footer-detail [items]="alojamiento.footers"
+></app-footer-detail>
+
+<!-- <ion-footer >
   
   <ion-chip *ngFor="let footer of alojamiento.footers"
     color= "white"
@@ -57,4 +45,4 @@
     <ion-label>{{footer.label}}</ion-label>
   </ion-chip>
   
-</ion-footer>
+</ion-footer> -->

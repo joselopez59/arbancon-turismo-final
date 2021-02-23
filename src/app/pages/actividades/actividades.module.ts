@@ -11,6 +11,7 @@ import { MapaComponent } from './mapa/mapa.component';
 // import {NgxLeafletLocateModule} from '@runette/ngx-leaflet-locate';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
