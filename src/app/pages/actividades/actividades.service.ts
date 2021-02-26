@@ -18,10 +18,6 @@ export class ActividadesService {
     private apollo: Apollo
   ) { }
 
-  // getactividades() {
-  //   return this.http.get(this.env.cmsURL + '/actividades');
-  // }
-
   getActividades() {
     const query: QueryRef<any> = this.apollo.watchQuery({
       query: gql`
@@ -60,6 +56,11 @@ export class ActividadesService {
             }
             text
             markdownText
+            actividadSegments {
+              value
+              label
+              texto
+            }
           }
         }
       `,

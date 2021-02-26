@@ -12,34 +12,6 @@ import { map } from 'rxjs/operators';
 
 export class CalendarPage implements OnInit {
 
-  // testEvento = {
-  //   title: 'test',
-  //   startTime: new Date(),
-  //   endTime: new Date(),
-  //   allDay: true
-  // };
-
-  // eventSource = [
-  //   {
-  //     title: 'test',
-  //     subtitle: 'sub',
-  //     startTime: new Date(),
-  //     endTime: new Date(),
-  //   },
-  //   {
-  //     title: 'test2',
-  //     startTime: new Date('januar 16, 2021 04:00:00'),
-  //     endTime: new Date('januar 17, 2021 04:00:00'),
-  //     allDay: true
-  //   },
-  //   {
-  //     title: 'test3',
-  //     startTime: new Date('februar 3, 2021 04:00:00'),
-  //     endTime: new Date('februar 3, 2021 05:00:00'),
-  //     allDay: true
-  //   },
-  // ];
-
   eventSource = [];
   viewTitle: string;
 
@@ -96,9 +68,9 @@ export class CalendarPage implements OnInit {
   }
 
   async onEventSelected(event) {
-   console.log('onEventSelected');
-   console.log(event.title);
-   console.log(event.subtitle);
-   console.log(event.startTime);
+  //  console.log('onEventSelected');
+  //  console.log(event.title);
+  //  console.log(event.subtitle);
+  //  console.log(event.startTime);
   }
 }

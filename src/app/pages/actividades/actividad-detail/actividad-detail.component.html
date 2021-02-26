@@ -7,21 +7,75 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content
-scrollEvents="true"  
-[fullscreen]="true"
->
-  <div class="ion-text-center">
+<ion-content>
+
+  <ion-segment  #segment 
+                scrollable
+                (ionChange)="onSegmentChange()"
+                >
+    <ion-segment-button value="0" checked>
+      <ion-icon name="call"></ion-icon>
+      <ion-label>Call</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="1">
+      <ion-icon name="cloud-upload"></ion-icon>
+      <ion-label>Publish</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-slides #slider
+              pager="true" 
+              [options]="slideOpts"
+              (ionSlideDidChange)="onSlideDidChange()">
+    <ion-slide class="slide-1">
+      Call
+    </ion-slide>
+    <ion-slide class="slide-2">
+      Publish
+    </ion-slide>
+  </ion-slides>
+
+  <!-- <div class="ion-text-center">
     <img src="{{imgURL}}">
-  </div>
+  </div> -->
   
-  <div class="ion-padding">
+  <!-- <div class="ion-padding" *ngIf="actividad.markdownText">
     
     <ion-text class=" ion-text-justify">
       <markdown [data]="actividad.markdownText" style="line-height: 140%;"></markdown>
     </ion-text>
     
-  </div>
+  </div> -->
+
+  <!-- <div *ngIf="actividad.actividadSegments" class="ion-padding-start ion-padding-end">
+    
+    <ion-segment  scrollable="true" 
+                  value="all" 
+                  [(ngModel)]="segmentModel"
+                  
+    >
+      <ion-segment-button 
+        *ngFor="let segmentButton of actividad.actividadSegments"
+        value="{{ segmentButton.value }}"
+      >
+        <ion-label class="ion-text-wrap ion-no-margin">
+          {{ segmentButton.label }}
+        </ion-label>
+      </ion-segment-button>
+  
+    </ion-segment>
+
+    <div *ngFor="let segmentText of actividad.actividadSegments"
+          class="ion-padding-start ion-padding-end"
+    >
+       
+        <ion-text class="ion-text-justify" *ngIf="segmentModel === segmentText.value">
+          <markdown [data]="segmentText.texto"></markdown>
+        </ion-text>
+       
+    </div>
+    
+  </div> -->
   
 </ion-content>
 

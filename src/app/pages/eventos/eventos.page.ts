@@ -12,9 +12,11 @@ import * as moment from 'moment';
 export class EventosPage implements OnInit {
 
   expanded = false;
+  segmentModel = 'proximos';
   eventos: any[] = [];
+  eventosAnt: any[] = [];
   headText =
-    'El calendario de actividades de Arbancón se ve salpicado por numerosos eventos a lo largo del año. Para ver los anteriores, consultar el calendario';
+    'El calendario de actividades de Arbancón se ve salpicado a lo largo del año por numerosos eventos culturales, deportivos y festivos.';
 
   constructor(
     private eventosService: EventosService,
@@ -24,10 +26,17 @@ export class EventosPage implements OnInit {
   ngOnInit() {
     const today = new Date();
     today.setHours(0, 0, 0 , 0);
+
     this.eventosService.getProximosEventos(today)
     .subscribe(result => {
       this.eventos = result.data.eventos;
     });
+
+    this.eventosService.getEventosPasados(today)
+    .subscribe(result => {
+      this.eventosAnt = result.data.eventos;
+    });
+
   }
 
   expandHeader() {
@@ -49,7 +58,6 @@ export class EventosPage implements OnInit {
 
     const gCalEvento = gcURL + text + dates + details + location;
     this.openExternalUrl(gCalEvento);
-    // this.openWindow(gCalEvento);
   }
 
   parseString(inputString: string): string {

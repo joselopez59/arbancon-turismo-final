@@ -16,24 +16,32 @@ export class EventosService {
     private apollo: Apollo
     ) { }
 
-  // getEventos() {
-  //   const query: QueryRef<any> = this.apollo.watchQuery({
-  //     query: gql`
-  //       query {
-  //         eventos {
-  //           title
-  //           descr
-  //           startTime
-  //           endTime
-  //           allDay
-  //           link
-  //         }
-  //       }
-  //     `
-  //   });
+  getEventosPasados(today: Date) {
+    const query: QueryRef<any> = this.apollo.watchQuery({
+      query: gql`
+        query ($date: DateTime)
+        {
+          eventos(
+            where: { startTime_lt: $date }
+            orderBy: startTime_DESC)
+            {
+              title
+              descr
+              startTime
+              endTime
+              allDay
+              link
+            }
+        }
+        `
+        ,
+        variables: {
+          date: today
+        }
+    });
 
-  //   return query.valueChanges;
-  // }
+    return query.valueChanges;
+  }
 
   getProximosEventos(today: Date) {
     const query: QueryRef<any> = this.apollo.watchQuery({
