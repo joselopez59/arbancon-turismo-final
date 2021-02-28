@@ -7,7 +7,7 @@ import { GastronomiaPage } from '../pages/gastronomia/gastronomia.page';
 import { PatrimonioPage } from '../pages/patrimonio/patrimonio.page';
 import { ActividadesPage } from '../pages/actividades/actividades.page';
 import { EventosPage } from './../pages/eventos/eventos.page';
-
+import { TabChangeEventService } from '../shared-components/tab-change-event.service';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.page.html',
@@ -16,16 +16,20 @@ import { EventosPage } from './../pages/eventos/eventos.page';
 
 export class TabsPage {
 
-  config: SuperTabsConfig = {
-    debug: true,
-    allowElementScroll: false,
-  };
-
   homePage = HomePage;
   alojamientosPage = AlojamientosPage;
   gastronomiaPage = GastronomiaPage;
   patrimonioPage = PatrimonioPage;
   actividadesPage = ActividadesPage;
   eventosPage = EventosPage;
+
+  constructor(
+    public events: TabChangeEventService
+    ) { }
+
+  onTabChange(event) {
+    // console.log('onTabChangeTabsPage');
+    this.events.publishEvent();
+  }
 
 }

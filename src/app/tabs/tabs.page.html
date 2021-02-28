@@ -1,4 +1,5 @@
 <super-tabs activeTabIndex="0"
+            (tabChange)="onTabChange($event)"
             [config]="{ nativeSmoothScroll: true }"
 >
   <super-tabs-toolbar slot="top">

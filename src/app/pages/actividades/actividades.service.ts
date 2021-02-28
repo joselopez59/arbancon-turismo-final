@@ -50,16 +50,14 @@ export class ActividadesService {
           actividad (where: {id: $id})
           {
             name
-            detail_img
-            {
-              url
-            }
+            detail_img { url }
             text
             markdownText
             actividadSegments {
               value
               label
               texto
+              segm_Img { url }
             }
           }
         }

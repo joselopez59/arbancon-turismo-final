@@ -5,80 +5,54 @@
     </ion-buttons>
     <ion-title>{{ actividad.name }}</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header>  
+
+<ion-img #imageTop src="{{ imgURL }}"></ion-img>
 
 <ion-content>
-
-  <ion-segment  #segment 
-                scrollable
-                (ionChange)="onSegmentChange()"
-                >
-    <ion-segment-button value="0" checked>
-      <ion-icon name="call"></ion-icon>
-      <ion-label>Call</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="1">
-      <ion-icon name="cloud-upload"></ion-icon>
-      <ion-label>Publish</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-
-  <ion-slides #slider
-              pager="true" 
-              [options]="slideOpts"
-              (ionSlideDidChange)="onSlideDidChange()">
-    <ion-slide class="slide-1">
-      Call
-    </ion-slide>
-    <ion-slide class="slide-2">
-      Publish
-    </ion-slide>
-  </ion-slides>
-
-  <!-- <div class="ion-text-center">
-    <img src="{{imgURL}}">
-  </div> -->
   
-  <!-- <div class="ion-padding" *ngIf="actividad.markdownText">
-    
+  <div class="ion-padding" *ngIf="actividad.markdownText">
     <ion-text class=" ion-text-justify">
       <markdown [data]="actividad.markdownText" style="line-height: 140%;"></markdown>
     </ion-text>
     
-  </div> -->
+  </div>
 
-  <!-- <div *ngIf="actividad.actividadSegments" class="ion-padding-start ion-padding-end">
-    
-    <ion-segment  scrollable="true" 
-                  value="all" 
-                  [(ngModel)]="segmentModel"
-                  
+  <super-tabs *ngIf="showSuperTabs"
+              (tabChange)="onTabChange($event)"
+              activeTabIndex="0"
+              [config]="{ 
+                nativeSmoothScroll: true,
+                debug: false
+              }"
+  >
+    <super-tabs-toolbar 
+      slot="top" 
+      scrollable
+      scrollable-padding = "false"
+      color="green"
     >
-      <ion-segment-button 
-        *ngFor="let segmentButton of actividad.actividadSegments"
-        value="{{ segmentButton.value }}"
-      >
+      <super-tab-button  
+        *ngFor="let segmentButton of actividad.actividadSegments">
         <ion-label class="ion-text-wrap ion-no-margin">
           {{ segmentButton.label }}
         </ion-label>
-      </ion-segment-button>
-  
-    </ion-segment>
+      </super-tab-button>
+    </super-tabs-toolbar>
 
-    <div *ngFor="let segmentText of actividad.actividadSegments"
-          class="ion-padding-start ion-padding-end"
-    >
-       
-        <ion-text class="ion-text-justify" *ngIf="segmentModel === segmentText.value">
+    <super-tabs-container auto-scroll-top=true>
+      <super-tab class="ion-padding-start ion-padding-end"
+      *ngFor="let segmentText of actividad.actividadSegments"
+      >
+        <ion-text>
           <markdown [data]="segmentText.texto"></markdown>
         </ion-text>
-       
-    </div>
-    
-  </div> -->
-  
+      </super-tab>
+    </super-tabs-container>
+  </super-tabs>
 </ion-content>
-
+    
+    
 <ion-footer class="ion-justify-content-center">
 
   <!-- <ion-chip  
@@ -88,6 +62,6 @@
   >
     <ion-icon name= "{{ button.icon }}"></ion-icon>
     <ion-label>{{ button.text }}</ion-label>
-  </ion-chip> -->
+  </ion-chip>  -->
 
 </ion-footer>

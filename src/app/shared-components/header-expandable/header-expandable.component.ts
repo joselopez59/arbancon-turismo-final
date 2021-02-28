@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { TabChangeEventService } from '../tab-change-event.service';
 
 @Component({
   selector: 'app-header-expandable',
@@ -13,7 +14,14 @@ export class HeaderExpandableComponent implements OnInit {
   @Input() backButton: boolean;
   expanded = false;
 
-  constructor() { }
+  constructor(
+    private events: TabChangeEventService
+  ) {
+      this.events.getObservable().subscribe(() => {
+      console.log('Data received:');
+      this.expanded = false;
+    });
+  }
 
   ngOnInit() {}
 

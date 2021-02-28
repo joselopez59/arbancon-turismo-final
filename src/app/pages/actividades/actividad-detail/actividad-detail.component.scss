@@ -1,24 +1,13 @@
-// ion-segment {
-//   display: flex;
-//   // justify-content: flex-end;
-//   align-items: flex-start;
+:host {  
+
+  --st-label-font-size: 10px;
+  --st-label-height: 18px;
+}
+
+super-tabs-toolbar, super-tab-button {
+  height: 24px;
+}
+
+// ion-label {
+//   font-size: smaller;
 // }
-
-ion-label {
-  font-size: smaller;
-}
-
-ion-slides,
-ion-slide {
-  height: 100%;
-  font-size: 48px !important;
-}
-
-.slide-1 {
-  background: #e0bbe4;
-}
-
-.slide-2 {
-  background: #957dad;
-  color: #fff;
-}

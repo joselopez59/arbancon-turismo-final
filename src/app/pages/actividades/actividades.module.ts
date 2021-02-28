@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { SuperTabsModule } from '@ionic-super-tabs/angular';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { ActividadesPageRoutingModule } from './actividades-routing.module';
@@ -15,6 +16,7 @@ import { MapaComponent } from './mapa/mapa.component';
     CommonModule,
     FormsModule,
     IonicModule,
+    SuperTabsModule,
     ActividadesPageRoutingModule,
     HeaderExpandableModule,
     MarkdownModule.forChild()

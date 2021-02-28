@@ -1,10 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AnimationController } from '@ionic/angular';
 
-import { IonSegment, IonSlides } from '@ionic/angular';
-
-
-import { environment } from 'src/environments/environment';
 import { ActividadesService } from '../actividades.service';
 
 @Component({
@@ -14,22 +11,15 @@ import { ActividadesService } from '../actividades.service';
 })
 export class ActividadDetailComponent implements OnInit {
 
-  env = environment;
   actividad: any = '';
   imgURL = '';
-  segmentModel: string;
-
-  @ViewChild(IonSlides) slider: IonSlides;
-  @ViewChild(IonSegment) segment: IonSegment;
-
-  slideOpts = {
-    // initialSlide: 1,
-    // speed: 400
-  };
+  showSuperTabs = false;
+  @ViewChild('imageTop', { read: ElementRef }) imageTop: ElementRef;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private actividadesService: ActividadesService
+    private actividadesService: ActividadesService,
+    private animationCtrl: AnimationController
   ) { }
 
   ngOnInit() {
@@ -37,24 +27,29 @@ export class ActividadDetailComponent implements OnInit {
     this.actividadesService.getActividad(id)
       .subscribe(result => {
         this.actividad = result.data.actividad;
+        // console.log(this.actividad);
         this.imgURL = result.data.actividad.detail_img.url;
-        if (this.actividad.actividadSegments)  {
-          // console.log('this.actividad', this.actividad.actividadSegments);
-          this.segmentModel = this.actividad.actividadSegments[0].value;
+        if (this.actividad.actividadSegments.length !== 0)  {
+          this.showSuperTabs = true;
+          // console.log(result.data.actividad.actividadSegments[3].segm_Img.url);
+          this.imgURL = this.actividad.actividadSegments[0].segm_Img.url;
         }
       });
   }
 
-  async onSlideDidChange() {
-    console.log('onSlideDidChange');
-    this.slider.getActiveIndex().then((val) => {
-      console.log(val);
-      this.segment.value = String(val);
-    });
+  onTabChange(event) {
+    const tab = event.detail.index;
+    this.imgURL = this.actividad.actividadSegments[tab].segm_Img.url;
+    this.fadeImage();
   }
 
-  onSegmentChange() {
-    console.log('onSegmentChange', this.segment.value);
-    this.slider.slideTo(+this.segment.value);
+  fadeImage() {
+    const loadingAnimation = this.animationCtrl.create('loading-animation')
+      .addElement(this.imageTop.nativeElement)
+      .duration(500)
+      .fromTo('opacity', '0', '1');
+
+    loadingAnimation.play();
   }
+
 }
