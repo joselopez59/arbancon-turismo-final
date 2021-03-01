@@ -51,7 +51,6 @@ export class ActividadesService {
           {
             name
             detail_img { url }
-            text
             markdownText
             actividadSegments {
               value

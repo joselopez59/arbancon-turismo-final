@@ -7,11 +7,24 @@
   </ion-toolbar>
 </ion-header>  
 
-<ion-img #imageTop src="{{ imgURL }}"></ion-img>
+<ion-img *ngIf="!showSuperTabs"
+          #imageTop 
+          src="{{ imgURL }}"
+></ion-img>
+
+<ion-slides *ngIf="showSuperTabs"
+            #slides
+            [options]="slideOpts"
+>
+  <ion-slide 
+    *ngFor="let image of actividad.actividadSegments">
+    <ion-img src="{{ image.segm_Img.url }}"></ion-img>
+  </ion-slide>
+</ion-slides>
 
 <ion-content>
   
-  <div class="ion-padding" *ngIf="actividad.markdownText">
+  <div class="ion-padding" *ngIf="!showSuperTabs">
     <ion-text class=" ion-text-justify">
       <markdown [data]="actividad.markdownText" style="line-height: 140%;"></markdown>
     </ion-text>
