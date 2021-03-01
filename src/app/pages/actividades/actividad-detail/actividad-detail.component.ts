@@ -1,17 +1,14 @@
-import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SuperTabs } from '@ionic-super-tabs/angular';
 import { AnimationController, IonSlides } from '@ionic/angular';
 
 import { ActividadesService } from '../actividades.service';
-import { getTestBed } from '@angular/core/testing';
-
 @Component({
   selector: 'app-actividad-detail',
   templateUrl: './actividad-detail.component.html',
   styleUrls: ['./actividad-detail.component.scss'],
 })
-export class ActividadDetailComponent implements OnInit, OnDestroy {
+export class ActividadDetailComponent implements OnInit {
 
   actividad: any = '';
   imgURL = '';
@@ -89,14 +86,6 @@ export class ActividadDetailComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    // console.log('ngOnInit');
-    // if (this.slides) {
-    //   console.log('this.slides');
-    // } else
-    // {
-    //   console.log('keine slides');
-    // }
-
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.actividadesService.getActividad(id)
       .subscribe(result => {
@@ -105,43 +94,23 @@ export class ActividadDetailComponent implements OnInit, OnDestroy {
         this.imgURL = result.data.actividad.detail_img.url;
         if (this.actividad.actividadSegments.length !== 0)  {
           this.showSuperTabs = true;
-          // this.slides.getSwiper()
-          //   .then(() => { console.log('slides getSwiper'); });
         }
       });
   }
 
   ionViewDidEnter() {
-    // console.log('ionViewDidEnter');
-    // if (this.slides) {
-    //   console.log('this.slides');
-    // } else
-    // {
-    //   console.log('keine slides');
-    // }
-    // this.slides.getSwiper()
-    //   .then(() => {
-    //     console.log('slides getSwiper');
-    //   });
+    console.log('ionViewDidEnter');
+    this.slides.getSwiper()
+     .then((swiper) => {
+        swiper.update();
+      });
   }
 
   onTabChange(event) {
-    console.log('onTabChange');
     this.slides.slideTo(event.detail.index);
-    this.slides.getActiveIndex()
-     .then((index) => { console.log('slide index:', index); });
-
-    // this.slides.getSwiper()
-    //  .then(() => { console.log('slides getSwiper', this.slides ); });
-  }
-
-  ngOnDestroy() {
-    console.log('ngOnDestroy');
-
-    // if (this.slides) {
-    //   console.log('this.slides ngOnDestroy');
-    //   this.slides.update()
-    //     .then(() => { console.log('update'); });
-    // }
+    // this.slides.getActiveIndex()
+    //  .then((index) => {
+    //     console.log('slide index:', index);
+    //   });
   }
 }
