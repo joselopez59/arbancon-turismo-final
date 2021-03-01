@@ -18,7 +18,7 @@ export class HeaderExpandableComponent implements OnInit {
     private events: TabChangeEventService
   ) {
       this.events.getObservable().subscribe(() => {
-      console.log('Data received:');
+      // console.log('Data received:');
       this.expanded = false;
     });
   }

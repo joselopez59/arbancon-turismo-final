@@ -99,7 +99,7 @@ export class ActividadDetailComponent implements OnInit {
   }
 
   ionViewDidEnter() {
-    console.log('ionViewDidEnter');
+    // console.log('ionViewDidEnter');
     this.slides.getSwiper()
      .then((swiper) => {
         swiper.update();
