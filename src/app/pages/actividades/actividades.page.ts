@@ -20,6 +20,7 @@ export class ActividadesPage implements OnInit {
   ngOnInit() {
     // console.log("ngOnInit()");
     this.actividadesService.getActividades()
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       // console.log('result', result);
       this.actividades = result.data.getActividades[0].actividades;

@@ -88,6 +88,7 @@ export class ActividadDetailComponent implements OnInit {
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.actividadesService.getActividad(id)
+      // tslint:disable-next-line: deprecation
       .subscribe(result => {
         this.actividad = result.data.actividad;
         // console.log(this.actividad);

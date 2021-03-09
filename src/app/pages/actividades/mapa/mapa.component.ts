@@ -54,7 +54,6 @@ export class MapaComponent {
     // this.map = new L.Map('mapId').setView([40.96404, -3.11249 ], 19);
 
     callejero.addTo(this.map);
-    // topografico.addTo(this.map);
     L.control.scale({imperial: false}).addTo(this.map);
 
     const baseLayers  = {
@@ -73,7 +72,11 @@ export class MapaComponent {
       '<span id="poiTurismoName">Servicios turísticos</span>': layerPoisTur
     };
 
-    const controlLayers = L.control.layers( baseLayers , overlays, { collapsed: false } );
+    const controlLayers = L.control.layers(
+      baseLayers ,
+      overlays,
+      { collapsed: false }
+    );
     // this.map.removeLayer(layerPoisTur);
 
     controlLayers.addTo(this.map);
@@ -95,6 +98,7 @@ export class MapaComponent {
     const layer = L.layerGroup();
 
     this.markerService.getTextPois()
+    // tslint:disable-next-line: deprecation
     .subscribe((result: any) => {
       console.log(result);
       for (const poi of result.data.mapTexts) {
@@ -127,6 +131,7 @@ export class MapaComponent {
 
     if (layerName === 'pois') {
       this.markerService.getPois()
+      // tslint:disable-next-line: deprecation
       .subscribe((result: any) => {
         // console.log(result);
         this.initLayer(layer, result.data.pois);
@@ -134,6 +139,7 @@ export class MapaComponent {
     }
     else if (layerName === 'poisturismo') {
       this.markerService.getPoisTurismo()
+      // tslint:disable-next-line: deprecation
       .subscribe((result: any) => {
         // console.log(result);
         this.initLayer(layer, result.data.poisTurismos);
@@ -176,6 +182,11 @@ export class MapaComponent {
     }
   }
 
+  makePopup(data: any): string {
+    return '' +
+      '<div>' + data + '</div>';
+  }
+
   // createLayer(layerName: string) {
 
   //   const layer = L.layerGroup();
@@ -208,10 +219,7 @@ export class MapaComponent {
   //   return layer;
   // }
 
-  makePopup(data: any): string {
-    return '' +
-      '<div>' + data + '</div>';
-  }
+
 
   ionViewWillLeave() {
     // console.log('ionViewWillLeave');
