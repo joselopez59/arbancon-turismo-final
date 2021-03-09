@@ -25,6 +25,7 @@ export class PatrimonioDetailComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.patrimonioService.getPatrimonio(id)
+      // tslint:disable-next-line: deprecation
       .subscribe(result => {
         this.patrimonio = result.data.patrimonio;
         // console.log('this.patrimonio', this.patrimonio.buttons);

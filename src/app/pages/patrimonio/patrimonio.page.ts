@@ -19,6 +19,7 @@ export class PatrimonioPage implements OnInit {
 
   ngOnInit() {
     this.patrimonioService.getPatrimonios()
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       this.patrimonios = result.data.getPatrimonios[0].patrimonios;
       this.headText = result.data.getPatrimonios[0].headText;

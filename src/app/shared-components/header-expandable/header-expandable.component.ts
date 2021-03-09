@@ -17,9 +17,11 @@ export class HeaderExpandableComponent implements OnInit {
   constructor(
     private events: TabChangeEventService
   ) {
-      this.events.getObservable().subscribe(() => {
-      // console.log('Data received:');
-      this.expanded = false;
+      this.events.getObservable()
+      // tslint:disable-next-line: deprecation
+      .subscribe(() => {
+        // console.log('Data received:');
+        this.expanded = false;
     });
   }
 

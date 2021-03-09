@@ -28,11 +28,13 @@ export class EventosPage implements OnInit {
     today.setHours(0, 0, 0 , 0);
 
     this.eventosService.getProximosEventos(today)
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       this.eventos = result.data.eventos;
     });
 
     this.eventosService.getEventosPasados(today)
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       this.eventosAnt = result.data.eventos;
     });

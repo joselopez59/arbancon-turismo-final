@@ -18,6 +18,7 @@ export class OfertasComponent implements OnInit {
 
   ngOnInit() {
     this.ofertasService.getOfertas()
+      // tslint:disable-next-line: deprecation
       .subscribe( result => {
         this.ofertas = result.data.getOfertas[0].ofertas;
         this.headText = result.data.getOfertas[0].headText;

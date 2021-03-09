@@ -30,11 +30,11 @@ export class HomePage implements OnInit {
   }
 
   getWheater() {
-    this.wheaterService.getWheater().subscribe(response => {
-
-      this.temp = Math.round(parseFloat(response.main.temp)) + '°';
-      this.iconUrl = 'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png';
-
+    this.wheaterService.getWheater()
+      // tslint:disable-next-line: deprecation
+      .subscribe(response => {
+        this.temp = Math.round(parseFloat(response.main.temp)) + '°';
+        this.iconUrl = 'https://openweathermap.org/img/w/' + response.weather[0].icon + '.png';
     });
   }
 }

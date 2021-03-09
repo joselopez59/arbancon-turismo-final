@@ -18,6 +18,7 @@ export class GastronomiaPage implements OnInit {
   ngOnInit() {
 
     this.gastronomiaService.getGastronomias()
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       // console.log(result.data.getGastronomias[0]);
       this.gastronomias = result.data.getGastronomias[0].gastronomias;

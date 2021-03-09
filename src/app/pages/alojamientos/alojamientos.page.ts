@@ -21,6 +21,7 @@ export class AlojamientosPage implements OnInit {
   ngOnInit() {
 
     this.alojamientosService.getAlojamientos()
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       this.alojamientos = result.data.getAlojamientos[0].alojamientos;
       this.headText = result.data.getAlojamientos[0].headText;

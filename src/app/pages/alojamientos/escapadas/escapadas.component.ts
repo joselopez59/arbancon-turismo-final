@@ -13,6 +13,7 @@ export class EscapadasComponent implements OnInit {
 
   ngOnInit() {
     this.escapadasService.getEscapadas()
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       // console.log(result);
       this.escapadas = result.data.getEscapadas[0].escapadas;

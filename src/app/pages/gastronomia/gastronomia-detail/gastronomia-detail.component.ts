@@ -33,6 +33,7 @@ export class GastronomiaDetailComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.gastronomiaService.getGastronomia(id)
+    // tslint:disable-next-line: deprecation
     .subscribe(response => {
       this.gastronomia = response.data.gastronomia;
       this.makeComponentProps();

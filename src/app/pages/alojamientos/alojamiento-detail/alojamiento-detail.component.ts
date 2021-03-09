@@ -33,6 +33,7 @@ export class AlojamientoDetailComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     this.alojamientosService.getAlojamiento(id)
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       this.alojamiento = result.data.alojamiento;
       this.makeComponentProps();

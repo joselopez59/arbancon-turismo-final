@@ -31,6 +31,7 @@ export class CalendarPage implements OnInit {
   ngOnInit() {
 
     this.eventosService.getCalendarEventos()
+    // tslint:disable-next-line: deprecation
     .subscribe(result => {
       this.eventSource = this.convertDate(result.data.eventos);
     });
