@@ -151,9 +151,22 @@ ion-footer {
 }
 
 .leaflet-popup-content  {
-  margin: 3px 9px;
+  margin: 9px 6px 3px 6px;
   div {
+    text-align: center;
     color: var(--ion-color-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } 
+  div.popUp {
+    width: 100px;
+    height: 100px;
+
+    img {
+      max-height: 80px;
+    }
   }
-  
+ 
 }

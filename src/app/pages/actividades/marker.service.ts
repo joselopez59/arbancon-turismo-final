@@ -38,6 +38,7 @@ export class MarkerService {
             lat
             lon
             iconMap { url }
+            puImg { url }
           }
         }
       `

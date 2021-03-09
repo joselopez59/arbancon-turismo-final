@@ -93,37 +93,37 @@ export class MapaComponent {
     // });
   }
 
-  createTextLayer() {
+  // createTextLayer() {
 
-    const layer = L.layerGroup();
+  //   const layer = L.layerGroup();
 
-    this.markerService.getTextPois()
-    // tslint:disable-next-line: deprecation
-    .subscribe((result: any) => {
-      console.log(result);
-      for (const poi of result.data.mapTexts) {
-        // console.log(poi.name);
-        const marker = L.marker(
-          [
-            poi.lat,
-            poi.lon
-          ]
-        );
+  //   this.markerService.getTextPois()
+  //   // tslint:disable-next-line: deprecation
+  //   .subscribe((result: any) => {
+  //     console.log(result);
+  //     for (const poi of result.data.mapTexts) {
+  //       // console.log(poi.name);
+  //       const marker = L.marker(
+  //         [
+  //           poi.lat,
+  //           poi.lon
+  //         ]
+  //       );
 
-        if (poi.iconText) { // poi has text
-          console.log('poi.iconText', poi.iconText);
-          const text = L.divIcon({
-            html: poi.iconText,
-            className: 'mapicontext',
-          });
+  //       if (poi.iconText) { // poi has text
+  //         console.log('poi.iconText', poi.iconText);
+  //         const text = L.divIcon({
+  //           html: poi.iconText,
+  //           className: 'mapicontext',
+  //         });
 
-          marker.setIcon(text);
-        }
-        marker.addTo(layer);
-      }
-    });
-    return layer;
-  }
+  //         marker.setIcon(text);
+  //       }
+  //       marker.addTo(layer);
+  //     }
+  //   });
+  //   return layer;
+  // }
 
   createLayer(layerName: string) {
 
@@ -133,7 +133,7 @@ export class MapaComponent {
       this.markerService.getPois()
       // tslint:disable-next-line: deprecation
       .subscribe((result: any) => {
-        // console.log(result);
+        console.log(result.data.pois);
         this.initLayer(layer, result.data.pois);
       });
     }
@@ -172,8 +172,15 @@ export class MapaComponent {
 
       const popUp = L.popup({
         closeButton: false
-      })
-      .setContent(this.makePopup(poi.name));
+      });
+
+      if (poi.puImg) {
+        console.log('imas', poi.puImg.url);
+        popUp.setContent(this.makePopupWithImg(poi.name, poi.puImg.url));
+      }
+      else {
+        popUp.setContent(this.makePopup(poi.name));
+      }
 
       // popUp.setContent(this.makePopup(poi.name));
 
@@ -182,9 +189,18 @@ export class MapaComponent {
     }
   }
 
-  makePopup(data: any): string {
+  makePopupWithImg(data: string, puImgUrl: string) {
     return '' +
-      '<div>' + data + '</div>';
+    '<div class="popUp">' +
+    '<img src="' + puImgUrl + '" />' +
+    data +
+    '</div>';
+  }
+
+  makePopup(data: string): string {
+    return '<div>' +
+    data +
+    '</div>';
   }
 
   // createLayer(layerName: string) {
