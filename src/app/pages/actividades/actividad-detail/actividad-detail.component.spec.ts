@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { ActividadDetailComponent } from './actividad-detail.component';
@@ -7,7 +7,7 @@ describe('ActividadDetailComponent', () => {
   let component: ActividadDetailComponent;
   let fixture: ComponentFixture<ActividadDetailComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ActividadDetailComponent ],
       imports: [IonicModule.forRoot()]

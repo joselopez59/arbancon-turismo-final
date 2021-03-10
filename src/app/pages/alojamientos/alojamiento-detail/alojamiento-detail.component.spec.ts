@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { AlojamientoDetailComponent } from './alojamiento-detail.component';
@@ -7,7 +7,7 @@ describe('AlojamientoDetailComponent', () => {
   let component: AlojamientoDetailComponent;
   let fixture: ComponentFixture<AlojamientoDetailComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ AlojamientoDetailComponent ],
       imports: [IonicModule.forRoot()]
