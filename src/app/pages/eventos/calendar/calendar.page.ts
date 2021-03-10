@@ -1,9 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarComponent } from 'ionic2-calendar';
-import { CalendarOptions } from '@fullcalendar/angular';
-import esLocale from '@fullcalendar/core/locales/es';
 import { EventosService } from '../eventos.service';
-import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.page.html',
